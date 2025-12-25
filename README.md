@@ -42,7 +42,7 @@ The backend system performs:
 
 1. In app.py, I utilized the FASTAPI and asyncpg libraries to create the backend service. FASTAPI was used as routing logic for HTTP requests and also for the validation of business rules. The asyncpg library was used as a postgres driver to connect to postgres instance and create tables from DB schema. The backend service accepts GET and POST requests, checks against business rules if http response should be 200, 500s, 422 or 404 depending on user requests. For valid POST requests, the backend service updates the client and transaction tables. To handle concurrent transactions, the code handles requests as transactions and locks the row during POST requests.
 
-2. The DB Schema consists of clients and transactions table. Client table maps all the customers and credit limits. Transactions table preview a history of debit and credit transactions recorded. 
+2. The DB Schema consists of clients and transactions table. Client table maps all the customers and credit limits. Transactions table previews a history of debit and credit transactions recorded. 
 
 3. Configurations were set up for installing the docker servers (one for database, two for backend servers, and one the load balancer nginx). The configurations were loaded into the DockerFile, docker-compose.yml, and nginx.conf files.
 
